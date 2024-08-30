@@ -87,7 +87,7 @@
 
   <!-- Sensing -->
   <group if="$(var launch_sensing)">
-    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_sensing_component.launch.xml"/>
+     <include file="$(find-pkg-share my_sensor_kit_launch)/launch/sensing.launch.xml">
   </group>
 
   <!-- Localization -->
@@ -104,7 +104,7 @@
 
   <!-- Planning -->
   <group if="$(var launch_planning)">
-    <include file="$(find-pkg-share my_autoware_launch)/launch/components/tier4_planning_component.launch.xml">
+    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_planning_component.launch.xml">
       <arg name="module_preset" value="$(var planning_module_preset)"/>
       <arg name="enable_all_modules_auto_mode" value="$(var enable_all_modules_auto_mode)"/>
       <arg name="is_simulation" value="$(var is_simulation)"/>
@@ -113,12 +113,12 @@
 
   <!-- Control -->
   <group if="$(var launch_control)">
-    <include file="$(find-pkg-share my_autoware_launch)/launch/components/tier4_control_component.launch.xml"/>
+    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_control_component.launch.xml"/>
   </group>
 
   <!-- API -->
   <group if="$(var launch_api)">
-    <include file="$(find-pkg-share my_autoware_launch)/launch/components/tier4_autoware_api_component.launch.xml"/>
+    <include file="$(find-pkg-share autoware_launch)/launch/components/tier4_autoware_api_component.launch.xml"/>
   </group>
 
   <!-- Tools -->
